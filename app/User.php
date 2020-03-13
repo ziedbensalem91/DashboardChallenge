@@ -16,7 +16,7 @@ class User extends Authenticatable
      * @var array
      */
     protected $fillable = [
-        'name', 'email', 'password',
+        'name', 'email', 'password', 'role',
     ];
 
     /**
@@ -40,8 +40,8 @@ class User extends Authenticatable
     {
          return $this->belongsToMany(Challange::class);
      }
-//      public function roles()
-// {
-//     return $this->belongsToMany('App\Role');
-// }
+     public function roles()
+{
+    return $this->belongsToMany('App\Role');
+}
 }

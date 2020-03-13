@@ -29,4 +29,5 @@ Route::get('/home', 'HomeController@index')->name('home')->middleware('is_admin'
 Route::view('/adminHome', 'adminHome')->name('adminHome');
 //Route::get('/challanges', 'ChallangeController@index')->name('challange.index');
 Route::resource('challanges', 'ChallangeController');
-
+Route::resource('users', 'UserController');
+Route::post('users/{id}', 'UserController@changeRole')->name('users.changeRole');

@@ -3,11 +3,11 @@
 @section('content')
 <div class="row">
 <div class="col-sm-12">
-    <h1 class="display-3">Challanges</h1>
+    <h1 class="display-3">Challenges</h1>
   <table class="table table-striped">
     <thead>
     <div>
-    <a style="margin: 19px;" href="{{ route('challanges.create')}}" class="btn btn-primary">New challange</a>
+    <a style="margin: 19px;" href="{{ route('challanges.create')}}" class="btn btn-primary">New challenge</a>
     </div>
         <tr>
           <td>ID</td>

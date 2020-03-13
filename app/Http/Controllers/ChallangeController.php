@@ -13,6 +13,7 @@ class ChallangeController extends Controller
    {
        $challanges = Challange::all();
        return view('challanges.index', compact('challanges'));
+
    }
 
    /**
