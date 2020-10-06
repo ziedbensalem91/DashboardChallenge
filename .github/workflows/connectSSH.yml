@@ -10,7 +10,7 @@ jobs:
     if: github.event.pull_request.merged == true   
     runs-on: ubuntu-latest
     steps:
-    - name: ls -a via ssh
+    - name: show docker containers
       uses: garygrossgarten/github-action-ssh@release
       with:
         command: docker ps
