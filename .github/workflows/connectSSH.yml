@@ -13,7 +13,7 @@ jobs:
     - name: ls -a via ssh
       uses: garygrossgarten/github-action-ssh@release
       with:
-        command: ls -a
+        command: docker ps
         host: ${{ secrets.HOST }}
         username: ec2-user
         privateKey: ${{ secrets.PRIVATE_KEY}}
