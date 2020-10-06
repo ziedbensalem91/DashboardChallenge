@@ -1,0 +1,20 @@
+name: "API Server tests"
+on:
+  pull_request:
+    branches:
+      - develop      
+    types: [closed]
+
+jobs:
+  build:
+    if: github.event.pull_request.merged == true   
+    runs-on: ubuntu-latest
+    steps:
+    - name: ls -a via ssh
+      uses: garygrossgarten/github-action-ssh@release
+      with:
+        command: ls -a
+        host: ${{ secrets.HOST }}
+        username: ec2-user
+        privateKey: ${{ secrets.PRIVATE_KEY}}
+
