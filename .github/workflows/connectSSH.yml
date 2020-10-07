@@ -13,7 +13,7 @@ jobs:
     - name: show docker containers
       uses: garygrossgarten/github-action-ssh@release
       with:
-        command: sudo echo ${{ github.event.number }}; sudo docker ps
+        command: sudo echo ${{ github.event.number }};docker stop $(docker ps -a | grep "PR-59-");docker rm $(docker ps -a | grep "PR-59-"); sudo docker ps
         host: ${{ secrets.HOST }}
         username: ec2-user
         privateKey: ${{ secrets.PRIVATE_KEY}}
