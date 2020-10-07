@@ -13,7 +13,7 @@ jobs:
     - name: show docker containers
       uses: garygrossgarten/github-action-ssh@release
       with:
-        command: docker ps
+        command: sudo docker ps
         host: ${{ secrets.HOST }}
         username: ec2-user
         privateKey: ${{ secrets.PRIVATE_KEY}}
