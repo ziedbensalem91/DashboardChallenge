@@ -13,7 +13,7 @@ jobs:
     - name: show docker containers
       uses: garygrossgarten/github-action-ssh@release
       with:
-        command: sudo echo ${{ github.event.number }};sudo docker ps -a
+        command: sudo echo ${{ github.event.number }};sudo docker ps -a;sudo docker images;docker stop $(docker ps -a | grep "PR-59-");docker rm $(docker ps -a | grep "PR-59-");docker stop $(docker ps -a | grep "ovice-devops_app_1");docker rm $(docker ps -a | grep "ovice-devops_app_1");docker image prune -f
         host: ${{ secrets.HOST }}
         username: ec2-user
         privateKey: ${{ secrets.PRIVATE_KEY}}
