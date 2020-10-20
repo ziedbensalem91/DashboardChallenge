@@ -13,7 +13,7 @@ jobs:
     - name: show docker containers
       uses: garygrossgarten/github-action-ssh@release
       with:
-        command: sudo echo ${{ github.event.number }};sudo docker ps -a;sudo docker images;docker stop $(docker ps -a | grep "PR-981-55");docker rm $(docker ps -a | grep "PR-981-55");docker stop $(docker ps -a | grep "ovice-laravel_pr-981_app_1");docker rm $(docker ps -a | grep "ovice-laravel_pr-981_app_1");docker image prune -f
+        command: sudo echo ${{ github.event.number }};sudo docker ps -a;sudo docker images;sudo docker stop $(docker ps -a | grep "PR-981-55");sudo docker rm $(docker ps -a | grep "PR-981-55");sudo docker stop $(docker ps -a | grep "ovice-laravel_pr-981_app_1");sudo docker rm $(docker ps -a | grep "ovice-laravel_pr-981_app_1");sudo docker image prune -f
         host: ${{ secrets.HOST }}
         username: ec2-user
         privateKey: ${{ secrets.PRIVATE_KEY}}
